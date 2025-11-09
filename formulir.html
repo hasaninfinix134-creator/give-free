@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Pribadi</title>
+    <style>
+        /* CSS Sederhana untuk Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .profile-photo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Membuat foto berbentuk lingkaran */
+            object-fit: cover;
+            border: 5px solid #ccc;
+        }
+        .biodata-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+            width: 120px;
+            color: #555;
+        }
+        .value {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    
+        <audio id="backgroundAudio" autoplay loop muted>
+        <source src="test.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Ambil elemen audio
+        const audio = document.getElementById('backgroundAudio');
+
+        // Fungsi yang akan dijalankan saat pengguna melakukan klik pertama
+        function unmuteAudio() {
+            if (audio.muted) {
+                audio.muted = false; // Matikan mute
+                // Opsional: Hapus event listener ini setelah berhasil unmute
+                document.removeEventListener('click', unmuteAudio);
+            }
+        }
+
+        // Tambahkan event listener untuk mendeteksi interaksi pengguna (misalnya klik)
+        document.addEventListener('click', unmuteAudio);
+        
+        // PENTING: Panggil .play() secara eksplisit (opsional tapi membantu)
+        // audio.play().catch(error => {
+        //    console.log("Autoplay diblokir:", error);
+        // });
+        
+    </script>
+
+    <div class="container">
+        <h1><b>PERINGATAN</b></h1>
+        
+        <div class="profile-photo">
+            <img src="widi.jpg" alt="Foto Profil">
+        </div>
+
+        <hr> <div class="biodata-item">
+            <div class="label">Nama Lengkap</div>
+            <div class="value">: WIDIA</div>
+        </div>
+
+        <div class="biodata-item">
+            <div class="label">Tempat/Tgl Lahir</div>
+            <div class="value">: -</div>
+        </div>
+
+        <div class="biodata-item">
+            <div class="label">Alamat</div>
+            <div class="value">: ES DENGKI</div>
+        </div>
+        
+        <div class="biodata-item">
+            <div class="label">Pekerjaan</div>
+            <div class="value">: Checker Get Steak</div>
+        </div>
+
+        <div class="biodata-item">
+            <div class="label">Email</div>
+            <div class="value">: -</div>
+        </div>
+
+        <div class="biodata-item">
+            <div class="label">Telepon</div>
+            <div class="value">: +62 838-8238-466</div>
+        </div>
+        
+        <hr>
+
+        <h2>Tentang Saya</h2>
+        <p>
+            saya adalah penipu (pelodes) kelas kakap,kerjaan saya melodes anak orang demi mendapatkan uang.
+        </p>
+
+    </div>
+
+</body>
+</html>

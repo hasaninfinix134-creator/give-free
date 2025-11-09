@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Otomatis (Muted)</title>
+</head>
+<body>
+
+    <h1>Klik Di Mana Saja untuk Mengaktifkan Suara!</h1>
+    
+    <audio id="backgroundAudio" autoplay loop muted>
+        <source src="lay.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Ambil elemen audio
+        const audio = document.getElementById('backgroundAudio');
+
+        // Fungsi yang akan dijalankan saat pengguna melakukan klik pertama
+        function unmuteAudio() {
+            if (audio.muted) {
+                audio.muted = false; // Matikan mute
+                // Opsional: Hapus event listener ini setelah berhasil unmute
+                document.removeEventListener('click', unmuteAudio);
+            }
+        }
+
+        // Tambahkan event listener untuk mendeteksi interaksi pengguna (misalnya klik)
+        document.addEventListener('click', unmuteAudio);
+        
+        // PENTING: Panggil .play() secara eksplisit (opsional tapi membantu)
+        // audio.play().catch(error => {
+        //    console.log("Autoplay diblokir:", error);
+        // });
+        
+    </script>
+</body>
+</html>
